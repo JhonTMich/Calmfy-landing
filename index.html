@@ -27,7 +27,7 @@
                 <li><a href="#inicio">Inicio</a></li>
                 <li><a href="#ventajas">Ventajas</a></li>
                 <li><a href="#testimonios">Testimonios</a></li>
-                <li><a href="#" class="nav-cta">Descargar</a></li>
+                <li><a href="#descargar" class="nav-cta">Descargar</a></li>
             </ul>
         </nav>
     </header>
@@ -41,10 +41,9 @@
             <p>Domina tu dinero, ahorra como un campeón y gestiona tus finanzas sin estrés. La app esencial para tu etapa universitaria.</p>
 
             <div class="hero-buttons">
-                <button class="btn-primary">¡Regístrate y Gana!</button>
-                <button class="btn-secondary">
-                    <i class="ri-play-circle-line"></i> Ver demo
-                </button>
+                <button class="btn-primary" onclick="window.location.href='#descargar'">¡Regístrate Ya!</button>
+                <button class = "btn-secondary" onclick = "window.location.href='#demo'">Ver Demo</button> </button>
+
             </div>
         </div>
     </section>
@@ -77,6 +76,22 @@
         </div>
     </section>
 
+    <section class="demo-section" id="demo">
+        <div class="demo-header">
+            <h2>Así se ve tu libertad financiera</h2>
+            <p>Una interfaz limpia, rápida y diseñada para estudiantes.</p>
+        </div>
+
+        <div class="phone-mockup-static">
+            <div class="phone-notch"></div>
+            <div class="phone-screen">
+                <img src="assets/img/pct1.jpg" class="screen-img active" alt="Pantalla 1">
+                <img src="assets/img/pct2.jpg" class="screen-img" alt="Pantalla 2">
+                <img src="assets/img/pct3.jpg" class="screen-img" alt="Pantalla 3">
+            </div>
+        </div>
+    </section>
+    
     <section class="features" id = "ventajas">
         <div class="section-header">
             <h2>Cómo Comfy te impulsa</h2>
@@ -140,7 +155,7 @@
         <h2>Dudas Resueltas</h2>
         <div class="faq-box">
             <details>
-                <summary>¿Calmfy será gratis?</summary>
+                <summary>¿Comfy será gratis?</summary>
                 <p>¡Absolutamente! Ofrecemos un Plan Esencial totalmente gratis para estudiantes.</p>
             </details>
             <details>
@@ -153,8 +168,8 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>Calmfy</h3>
-                <p>© 2025 Calmfy. Todos los derechos reservados.</p>
+                <h3>Comfy</h3>
+                <p>© 2025 Comfy. Todos los derechos reservados.</p>
             </div>
             <div class="footer-socials">
                 <a href="#"><i class="ri-instagram-line"></i></a>
@@ -164,49 +179,56 @@
         </div>
     </footer>
 <script>
-    const input = document.getElementById('emailInput');
-    const boton = document.getElementById('btnRegistro');
-    const mensaje = document.getElementById('mensajeFeedback');
+        /* 1. LÓGICA DEL FORMULARIO */
+        const input = document.getElementById('emailInput');
+        const botonReg = document.getElementById('btnRegistro');
+        const mensaje = document.getElementById('mensajeFeedback');
+        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-    // Esta función verifica si parece un email real
-    function esEmailValido(email) {
-        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-    }
-
-    boton.addEventListener('click', function() {
-        const correo = input.value.trim();
-
-        // 1. CASO DE ERROR: Está vacío o no tiene formato de email
-        if (correo === "" || !esEmailValido(correo)) {
-            mensaje.innerText = "Por favor, ingresa un email válido";
-            mensaje.className = "mensaje-oculto texto-error"; // Ponemos clase ROJA
-            mensaje.style.display = "block";
-            
-            // Opcional: Sacudir el input (visual)
-            input.style.borderColor = "#ef4444";
-            
-        } 
-        // 2. CASO DE ÉXITO: Todo correcto
-        else {
-            boton.innerText = "Enviando...";
-            input.style.borderColor = "#cbd5e1"; // Restaurar borde gris
-
-            setTimeout(() => {
-                input.value = ""; // Limpiar
-                boton.innerText = "Registrar"; // Restaurar botón
-
-                mensaje.innerText = "¡Gracias! Te contactaremos pronto";
-                mensaje.className = "mensaje-oculto texto-exito"; // Ponemos clase VERDE
-                mensaje.style.display = "block";
-
-                // Ocultar mensaje a los 3 segundos
-                setTimeout(() => {
-                    mensaje.style.display = "none";
-                }, 3000);
-            }, 1000);
+        if(botonReg) {
+            botonReg.addEventListener('click', function() {
+                const correo = input.value.trim();
+                if (correo === "" || !regexEmail.test(correo)) {
+                    mensaje.innerText = "Por favor, ingresa un email válido";
+                    mensaje.className = "mensaje-oculto texto-error";
+                    mensaje.style.display = "block";
+                } else {
+                    botonReg.innerText = "Enviando...";
+                    setTimeout(() => {
+                        input.value = "";
+                        botonReg.innerText = "¡A por ello!";
+                        mensaje.innerText = "¡Gracias! Te contactaremos pronto";
+                        mensaje.className = "mensaje-oculto texto-exito";
+                        mensaje.style.display = "block";
+                        setTimeout(() => { mensaje.style.display = "none"; }, 3000);
+                    }, 1000);
+                }
+            });
         }
-    });
-</script>
+
+        /* 2. LÓGICA DEL CELULAR (ROTACIÓN AUTOMÁTICA) */
+        const images = document.querySelectorAll('.screen-img');
+        let currentImageIndex = 0;
+
+        function rotateImages() {
+            // Si no hay imágenes, no hacemos nada (evita errores)
+            if(images.length === 0) return;
+
+            // Quitamos 'active' de la actual
+            images[currentImageIndex].classList.remove('active');
+
+            // Calculamos la siguiente
+            currentImageIndex = (currentImageIndex + 1) % images.length;
+
+            // Ponemos 'active' a la nueva
+            images[currentImageIndex].classList.add('active');
+        }
+
+        // Iniciar rotación cada 3 segundos
+        setInterval(rotateImages, 2000);
+
+    </script>
+</body>
 </body>
 </html>
 </body>
