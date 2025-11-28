@@ -4,169 +4,152 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calmfy - Tu Futuro Financiero Despega Hoy</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Outfit:wght@700;800&display=swap" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body>
 
-    <!-- NAVBAR -->
     <header class="navbar">
         <div class="logo">
-            <img src="https://cdn-icons-png.flaticon.com/512/992/992651.png" class="logo-icon">
+            <i class="ri-wallet-3-fill logo-icon"></i>
             <span>Calmfy</span>
         </div>
 
         <nav>
             <ul>
                 <li><a href="#">Inicio</a></li>
-                <li><a href="#">Próximamente</a></li>
                 <li><a href="#">Ventajas</a></li>
-                <li><a href="#">Lo que dicen</a></li>
-                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Testimonios</a></li>
+                <li><a href="#" class="nav-cta">Descargar</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- HERO -->
     <section class="hero">
+        <div class="hero-blob"></div>
+
         <div class="hero-content">
-            <h1>Calmfy: ¡Tu<br>Futuro<br>Financiero<br>Despega HOY!</h1>
-            <p>Prepárate para dominar tu dinero, ahorrar como un campeón y gestionar tus finanzas sin un ápice de estrés. La app esencial para tu etapa universitaria está a punto de revolucionarlo todo.</p>
+            <span class="badge">🚀 Disponible pronto para estudiantes</span>
+            <h1>Tu Futuro Financiero <br> <span class="highlight">Despega HOY</span></h1>
+            <p>Domina tu dinero, ahorra como un campeón y gestiona tus finanzas sin estrés. La app esencial para tu etapa universitaria.</p>
 
             <div class="hero-buttons">
                 <button class="btn-primary">¡Regístrate y Gana!</button>
-                <button class="btn-secondary">Quiero Saber Más</button>
+                <button class="btn-secondary">
+                    <i class="ri-play-circle-line"></i> Ver demo
+                </button>
             </div>
         </div>
-
-        <!-- Blob decorativo -->
-        <div class="hero-blob"></div>
     </section>
 
-    <!-- FORM BOX -->
     <section class="early-access">
-        <div class="card">
+        <div class="card glass-card">
             <h2>¡La Espera Termina Pronto!</h2>
-            <p>Sé parte del lanzamiento que lo cambiará todo. Regístrate ahora para obtener acceso anticipado, sorpresas exclusivas y el estatus de pionero.</p>
+            <p>Sé parte del lanzamiento. Regístrate ahora para obtener acceso anticipado y sorpresas exclusivas.</p>
 
             <div class="input-group">
-                <input type="email" placeholder="Tu email mágico aquí...">
+                <input type="email" placeholder="Tu mejor email aquí...">
                 <button class="btn-primary">¡A por ello!</button>
             </div>
         </div>
     </section>
 
-    <!-- FEATURES -->
     <section class="features">
-        <h2>Cómo Calmfy Te Impulsará Hacia Adelante</h2>
+        <div class="section-header">
+            <h2>Cómo Calmfy te impulsa</h2>
+            <p>Todo lo que necesitas para dejar de comer solo fideos a fin de mes.</p>
+        </div>
 
         <div class="features-grid">
 
             <div class="feature-card">
-                <div class="icon">⚡</div>
-                <h3>Ahorra sin Esfuerzo, ¡Eureka!</h3>
-                <p>Configura reglas inteligentes para ahorrar dinero casi por arte de magia. Pequeñas cantidades que crecen sin que te des cuenta.</p>
+                <div class="icon-box"><i class="ri-flashlight-fill"></i></div>
+                <h3>Ahorra sin Esfuerzo</h3>
+                <p>Configura reglas inteligentes para ahorrar dinero casi por arte de magia.</p>
             </div>
 
             <div class="feature-card">
-                <div class="icon">🎯</div>
-                <h3>Despega con Retos Divertidos</h3>
-                <p>Participa en desafíos interactivos y gamificados que hacen que alcanzar tus metas financieras sea una aventura épica.</p>
+                <div class="icon-box"><i class="ri-gamepad-line"></i></div>
+                <h3>Retos Divertidos</h3>
+                <p>Desafíos gamificados que hacen que alcanzar tus metas sea una aventura épica.</p>
             </div>
 
             <div class="feature-card">
-                <div class="icon">📘</div>
-                <h3>Sabiduría Financiera al Instante</h3>
-                <p>Accede a módulos cortos, consejos personalizados y trucos de expertos para dominar el dinero sin dolores de cabeza.</p>
+                <div class="icon-box"><i class="ri-book-open-line"></i></div>
+                <h3>Sabiduría Flash</h3>
+                <p>Módulos de 3 minutos con trucos de expertos para dominar el dinero.</p>
             </div>
 
         </div>
     </section>
 
-    <!-- TESTIMONIOS -->
     <section class="testimonials">
-        <h2>Voces que Resuenan: Testimonios de Éxito</h2>
+        <h2>Voces que Resuenan</h2>
 
         <div class="testimonials-grid">
-
             <div class="testimony">
-                <p class="text">"¡Calmfy es la chispa que necesitaba! Estoy emocionado de ver cómo transformará mi vida universitaria al ayudarme a ahorrar sin el estrés habitual."</p>
-                <p class="author"><strong>Sofía Martínez</strong><br>Universidad Autónoma de Barcelona</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="text">"¡Calmfy es la chispa que necesitaba! Estoy emocionado de ver cómo transformará mi vida universitaria."</p>
+                <div class="author">
+                    <div class="avatar">SM</div>
+                    <div>
+                        <strong>Sofía Martínez</strong>
+                        <small>U. Autónoma de Barcelona</small>
+                    </div>
+                </div>
             </div>
 
             <div class="testimony">
-                <p class="text">"Gracias a la promesa de Calmfy, ya estoy imaginando cómo voy a financiar mi próximo viaje de estudios. Los retos prometen ser clave para mis ahorros."</p>
-                <p class="author"><strong>Diego Rodríguez</strong><br>Universidad de Valencia</p>
+                <div class="stars">⭐⭐⭐⭐⭐</div>
+                <p class="text">"Gracias a la promesa de Calmfy, ya estoy imaginando cómo voy a financiar mi próximo viaje de estudios."</p>
+                <div class="author">
+                    <div class="avatar">DR</div>
+                    <div>
+                        <strong>Diego Rodríguez</strong>
+                        <small>Universidad de Valencia</small>
+                    </div>
+                </div>
             </div>
-
         </div>
     </section>
 
-    <!-- FAQ -->
     <section class="faq">
-        <h2>Tus Dudas Resueltas, Claramente</h2>
-
+        <h2>Dudas Resueltas</h2>
         <div class="faq-box">
-
             <details>
-                <summary>¿Calmfy será mi nuevo mejor amigo financiero sin coste?</summary>
-                <p>¡Absolutamente! Calmfy ofrecerá un Plan Esencial totalmente gratis con funciones básicas de ahorro y gestión de gastos.</p>
+                <summary>¿Calmfy será gratis?</summary>
+                <p>¡Absolutamente! Ofrecemos un Plan Esencial totalmente gratis para estudiantes.</p>
             </details>
-
             <details>
-                <summary>¿Cómo me aseguro de no perderme el gran lanzamiento?</summary>
-                <p>Suscríbete a nuestra lista de correo en la sección "Próximamente" y recibirás novedades exclusivas.</p>
+                <summary>¿Es seguro conectar mi banco?</summary>
+                <p>Sí, utilizamos cifrado de nivel bancario y nunca vendemos tus datos.</p>
             </details>
-
             <details>
-                <summary>¿Mi información estará a salvo con Calmfy?</summary>
-                <p>Claro que sí. Priorizamos tu seguridad con cifrado de última generación.</p>
+                <summary>¿Cuándo es el lanzamiento?</summary>
+                <p>Estamos puliendo los últimos detalles para lanzarlo el próximo semestre.</p>
             </details>
-
-            <details>
-                <summary>¿Puedo usar Calmfy con mi banco actual?</summary>
-                <p>Sí, estamos trabajando para que sea compatible con la mayoría de bancos populares.</p>
-            </details>
-
         </div>
     </section>
 
-    <!-- FOOTER -->
     <footer class="footer">
-
-        <div class="footer-col">
-            <h3 class="logo-footer">💠 Calmfy</h3>
-            <p>© 2025 Calmfy. Todos los derechos reservados.</p>
-        </div>
-
-        <div class="footer-col">
-            <h4>Explorar</h4>
-            <a href="#">Inicio</a>
-            <a href="#">Próximamente</a>
-            <a href="#">Ventajas</a>
-            <a href="#">Lo que dicen</a>
-            <a href="#">FAQ</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Información</h4>
-            <a href="#">Términos y Condiciones</a>
-            <a href="#">Política de Privacidad</a>
-        </div>
-
-        <div class="footer-col">
-            <h4>Conecta con Nosotros</h4>
-            <div class="socials">
-                <span>📘</span>
-                <span>📷</span>
-                <span>🐦</span>
-                <span>💼</span>
+        <div class="footer-content">
+            <div class="footer-brand">
+                <h3>💠 Calmfy</h3>
+                <p>© 2025 Calmfy. Todos los derechos reservados.</p>
             </div>
-
-            <p>hola@calmfy.com</p>
-            <p>+34 987 65 43 21</p>
+            <div class="footer-socials">
+                <a href="#"><i class="ri-instagram-line"></i></a>
+                <a href="#"><i class="ri-twitter-x-line"></i></a>
+                <a href="#"><i class="ri-linkedin-fill"></i></a>
+            </div>
         </div>
-
     </footer>
 
 </body>
