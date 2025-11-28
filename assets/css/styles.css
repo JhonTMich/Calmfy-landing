@@ -1,4 +1,8 @@
 /* ===== VARIABLES Y COLORES ===== */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 100px; /* IMPORTANTE: Esto evita que el menú tape el título */
+}
 :root {
     --primary: #6366f1;       /* Indigo vibrante */
     --primary-dark: #4f46e5;
@@ -87,7 +91,7 @@ nav a:hover {
 /* ===== HERO (CENTRADO) ===== */
 .hero {
     position: relative;
-    padding: 120px 20px; /* Mucho espacio arriba/abajo */
+    padding: 100px 20px; /* Mucho espacio arriba/abajo */
     text-align: center;  /* CENTRA EL TEXTO */
     display: flex;
     flex-direction: column;
@@ -183,7 +187,7 @@ nav a:hover {
 .early-access {
     display: flex;
     justify-content: center;
-    padding: 0 20px 80px;
+    padding: 50px 20px 80px;
 }
 
 .glass-card {
@@ -302,7 +306,7 @@ nav a:hover {
 }
 
 .avatar {
-    width: 45px;
+    width: 55px;
     height: 45px;
     background: var(--gradient);
     color: white;
@@ -385,4 +389,106 @@ details p {
     .navbar { flex-direction: column; gap: 15px; }
     .input-group { flex-direction: column; }
     .footer-content { flex-direction: column; gap: 20px; text-align: center; }
+}
+/* ===== CARRUSEL INFINITO (MODO FOTOS) ===== */
+
+/* Contenedor principal para darle aire arriba y abajo */
+.marquee-section {
+    padding: 50px 0;
+    background: white; /* O usa var(--light-bg) si prefieres gris claro */
+    overflow: hidden; /* Corta lo que se salga de la pantalla */
+}
+
+.logos-marquee {
+    white-space: nowrap; /* Obliga a las fotos a estar en una sola fila */
+    position: relative;
+}
+
+/* Difuminado a los lados (Efecto elegante) */
+.logos-marquee::before,
+.logos-marquee::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px; /* Ancho del difuminado */
+    height: 100%;
+    z-index: 2;
+    pointer-events: none; /* Permite dar click a través del difuminado */
+}
+
+.logos-marquee::before {
+    left: 0;
+    background: linear-gradient(to right,lightblue, transparent);
+}
+
+.logos-marquee::after {
+    right: 0;
+    background: linear-gradient(to left, lightblue, transparent);
+}
+
+/* La pista que se mueve */
+.logos-track {
+    display: inline-block;
+    animation: slide 35s linear infinite; /* 35s es la velocidad (mayor = más lento) */
+}
+
+/* ESTILO DE LAS FOTOS */
+.logos-track img {
+    height: 300px;       /* Altura fija (tipo Story de Instagram) */
+    width: 420px;        /* Ancho fijo */
+    object-fit: cover;   /* IMPORTANTE: Recorta la foto para que no se estire */
+    border-radius: 16px; /* Bordes redondeados */
+    margin: 0 15px;      /* Espacio entre cada foto */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Sombra suave */
+    transition: transform 0.3s ease; /* Animación al pasar el mouse */
+}
+
+/* Efecto al pasar el mouse por encima de una foto */
+.logos-track img:hover {
+    transform: scale(1.05); /* Crece un 5% */
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2); /* Sombra morada */
+}
+
+/* LA ANIMACIÓN DE MOVIMIENTO */
+@keyframes slide {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        /* Se mueve hacia la izquierda la mitad exacta (el tamaño del primer grupo) */
+        transform: translateX(-50%); 
+    }
+}
+
+/* Ajuste para móviles (fotos un poco más pequeñas) */
+@media (max-width: 768px) {
+    .logos-track img {
+        height: 200px;
+        width: 150px;
+    }
+}
+
+/* Colores de estado */
+.texto-exito {
+    color: #10b981; /* Verde */
+}
+
+.texto-error {
+    color: #ef4444; /* Rojo fuerte */
+}
+
+/* El estilo base del mensaje (igual que antes) */
+.mensaje-oculto {
+    display: none;
+    font-weight: 600;
+    margin-top: 15px;
+    font-size: 0.9rem;
+    animation: fadeIn 0.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
 }

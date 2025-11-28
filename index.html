@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calmfy - Tu Futuro Financiero Despega Hoy</title>
+    <title>Comfy - Tu Futuro Financiero Despega Hoy</title>
     
     <link rel="stylesheet" href="assets/css/styles.css">
 
@@ -19,24 +19,24 @@
     <header class="navbar">
         <div class="logo">
             <i class="ri-wallet-3-fill logo-icon"></i>
-            <span>Calmfy</span>
+            <span>Comfy</span>
         </div>
 
         <nav>
             <ul>
-                <li><a href="#">Inicio</a></li>
-                <li><a href="#">Ventajas</a></li>
-                <li><a href="#">Testimonios</a></li>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#ventajas">Ventajas</a></li>
+                <li><a href="#testimonios">Testimonios</a></li>
                 <li><a href="#" class="nav-cta">Descargar</a></li>
             </ul>
         </nav>
     </header>
 
-    <section class="hero">
+    <section class="hero" id = "inicio">
         <div class="hero-blob"></div>
 
         <div class="hero-content">
-            <span class="badge">🚀 Disponible pronto para estudiantes</span>
+            <span class="badge">Disponible pronto para estudiantes</span>
             <h1>Tu Futuro Financiero <br> <span class="highlight">Despega HOY</span></h1>
             <p>Domina tu dinero, ahorra como un campeón y gestiona tus finanzas sin estrés. La app esencial para tu etapa universitaria.</p>
 
@@ -49,21 +49,37 @@
         </div>
     </section>
 
-    <section class="early-access">
+    <div class="logos-marquee">
+        <div class="logos-track">
+            <img src="assets/img/pct1.jpg" alt= "Universitarios">
+            <img src="assets/img/pct2.jpg" alt= "Universitarios">
+            <img src="assets/img/pct3.jpg" alt= "Universitarios">
+            <img src="assets/img/pct4.jpg" alt= "Universitarios">
+            <img src="assets/img/pct5.jpg" alt= "Universitarios">
+            <img src="assets/img/pct6.jpg" alt= "Universitarios">
+            <img src="assets/img/pct7.jpg" alt= "Universitarios">
+            <img src="assets/img/pct8.jpg" alt= "Universitarios">
+
+        </div>
+    </div>
+
+    <section class="early-access" id="descargar">
         <div class="card glass-card">
             <h2>¡La Espera Termina Pronto!</h2>
-            <p>Sé parte del lanzamiento. Regístrate ahora para obtener acceso anticipado y sorpresas exclusivas.</p>
+            <p>Sé parte del lanzamiento. Regístrate ahora para obtener acceso anticipado.</p>
 
             <div class="input-group">
-                <input type="email" placeholder="Tu mejor email aquí...">
-                <button class="btn-primary">¡A por ello!</button>
+                <input type="email" id="emailInput" placeholder="Ingresa tu email aquí...">
+                <button class="btn-primary" id="btnRegistro">Registrar</button>
             </div>
+
+            <p id="mensajeFeedback" class="mensaje-oculto"></p>
         </div>
     </section>
 
-    <section class="features">
+    <section class="features" id = "ventajas">
         <div class="section-header">
-            <h2>Cómo Calmfy te impulsa</h2>
+            <h2>Cómo Comfy te impulsa</h2>
             <p>Todo lo que necesitas para dejar de comer solo fideos a fin de mes.</p>
         </div>
 
@@ -83,37 +99,37 @@
 
             <div class="feature-card">
                 <div class="icon-box"><i class="ri-book-open-line"></i></div>
-                <h3>Sabiduría Flash</h3>
-                <p>Módulos de 3 minutos con trucos de expertos para dominar el dinero.</p>
+                <h3>Cachuelos</h3>
+                <p>Genera ingresos extra a traves de breves encuestas.</p>
             </div>
 
         </div>
     </section>
 
-    <section class="testimonials">
+    <section class="testimonials" id = "testimonios">
         <h2>Voces que Resuenan</h2>
 
         <div class="testimonials-grid">
             <div class="testimony">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="text">"¡Calmfy es la chispa que necesitaba! Estoy emocionado de ver cómo transformará mi vida universitaria."</p>
+                <p class="text">"¡Comfy es la chispa que necesitaba! Estoy emocionado de ver cómo transformará mi vida universitaria."</p>
                 <div class="author">
-                    <div class="avatar">SM</div>
+                    <div class="avatar">LM</div>
                     <div>
-                        <strong>Sofía Martínez</strong>
-                        <small>U. Autónoma de Barcelona</small>
+                        <strong>Lucia Moreno</strong>
+                        <small>Univerisdad Nacional de Trujillo</small>
                     </div>
                 </div>
             </div>
 
             <div class="testimony">
                 <div class="stars">⭐⭐⭐⭐⭐</div>
-                <p class="text">"Gracias a la promesa de Calmfy, ya estoy imaginando cómo voy a financiar mi próximo viaje de estudios."</p>
+                <p class="text">"Gracias a la promesa de Comfy, ya estoy imaginando cómo voy a financiar mi próximo viaje de estudios."</p>
                 <div class="author">
-                    <div class="avatar">DR</div>
+                    <div class="avatar">PM</div>
                     <div>
-                        <strong>Diego Rodríguez</strong>
-                        <small>Universidad de Valencia</small>
+                        <strong>Piero Muñoz</strong>
+                        <small>Universidad Peruana de Ciencias Aplicadas</small>
                     </div>
                 </div>
             </div>
@@ -128,10 +144,6 @@
                 <p>¡Absolutamente! Ofrecemos un Plan Esencial totalmente gratis para estudiantes.</p>
             </details>
             <details>
-                <summary>¿Es seguro conectar mi banco?</summary>
-                <p>Sí, utilizamos cifrado de nivel bancario y nunca vendemos tus datos.</p>
-            </details>
-            <details>
                 <summary>¿Cuándo es el lanzamiento?</summary>
                 <p>Estamos puliendo los últimos detalles para lanzarlo el próximo semestre.</p>
             </details>
@@ -141,7 +153,7 @@
     <footer class="footer">
         <div class="footer-content">
             <div class="footer-brand">
-                <h3>💠 Calmfy</h3>
+                <h3>Calmfy</h3>
                 <p>© 2025 Calmfy. Todos los derechos reservados.</p>
             </div>
             <div class="footer-socials">
@@ -151,6 +163,51 @@
             </div>
         </div>
     </footer>
+<script>
+    const input = document.getElementById('emailInput');
+    const boton = document.getElementById('btnRegistro');
+    const mensaje = document.getElementById('mensajeFeedback');
 
+    // Esta función verifica si parece un email real
+    function esEmailValido(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+
+    boton.addEventListener('click', function() {
+        const correo = input.value.trim();
+
+        // 1. CASO DE ERROR: Está vacío o no tiene formato de email
+        if (correo === "" || !esEmailValido(correo)) {
+            mensaje.innerText = "Por favor, ingresa un email válido";
+            mensaje.className = "mensaje-oculto texto-error"; // Ponemos clase ROJA
+            mensaje.style.display = "block";
+            
+            // Opcional: Sacudir el input (visual)
+            input.style.borderColor = "#ef4444";
+            
+        } 
+        // 2. CASO DE ÉXITO: Todo correcto
+        else {
+            boton.innerText = "Enviando...";
+            input.style.borderColor = "#cbd5e1"; // Restaurar borde gris
+
+            setTimeout(() => {
+                input.value = ""; // Limpiar
+                boton.innerText = "Registrar"; // Restaurar botón
+
+                mensaje.innerText = "¡Gracias! Te contactaremos pronto";
+                mensaje.className = "mensaje-oculto texto-exito"; // Ponemos clase VERDE
+                mensaje.style.display = "block";
+
+                // Ocultar mensaje a los 3 segundos
+                setTimeout(() => {
+                    mensaje.style.display = "none";
+                }, 3000);
+            }, 1000);
+        }
+    });
+</script>
+</body>
+</html>
 </body>
 </html>
