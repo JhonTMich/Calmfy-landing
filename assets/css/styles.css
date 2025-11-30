@@ -224,10 +224,50 @@ nav a:hover {
     border-color: var(--primary);
 }
 
-/* ===== FEATURES ===== */
 .features {
     padding: 80px 5%;
     background: white;
+    position: relative; 
+    overflow: hidden;   
+}
+
+.features::before {
+    content: '';
+    position: absolute;
+    width: 600px; 
+    height: 600px;
+    background: var(--primary); 
+    filter: blur(100px);
+
+    opacity: 0.25; 
+    top: 0%;       
+    left: -250px;  
+    
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.features::after {
+    content: '';
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    background: var(--secondary);
+    filter: blur(90px);
+    
+    opacity: 0.20; 
+    bottom: 10%;  
+    right: -200px;
+    
+    z-index: 0;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.section-header, .features-grid {
+    position: relative;
+    z-index: 2;
 }
 
 .section-header {
@@ -270,7 +310,6 @@ nav a:hover {
     margin: 0 auto 20px;
 }
 
-/* ===== TESTIMONIALS ===== */
 .testimonials {
     padding: 100px 5%;
     text-align: center;
@@ -321,7 +360,6 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* ===== FOOTER ===== */
 .footer {
     padding: 50px 5%;
     background: var(--light-bg);
@@ -343,37 +381,34 @@ nav a:hover {
     text-decoration: none;
 }
 
-/* Responsive básico */
 @media (max-width: 768px) {
     .hero h1 { font-size: 2.5rem; }
     .navbar { flex-direction: column; gap: 15px; }
     .input-group { flex-direction: column; }
     .footer-content { flex-direction: column; gap: 20px; text-align: center; }
 }
-/* ===== CARRUSEL INFINITO (MODO FOTOS) ===== */
 
-/* Contenedor principal para darle aire arriba y abajo */
+
 .marquee-section {
     padding: 50px 0;
-    background: white; /* O usa var(--light-bg) si prefieres gris claro */
-    overflow: hidden; /* Corta lo que se salga de la pantalla */
+    background: white; 
+    overflow: hidden; 
 }
 
 .logos-marquee {
-    white-space: nowrap; /* Obliga a las fotos a estar en una sola fila */
+    white-space: nowrap; 
     position: relative;
 }
 
-/* Difuminado a los lados (Efecto elegante) */
 .logos-marquee::before,
 .logos-marquee::after {
     content: "";
     position: absolute;
     top: 0;
-    width: 100px; /* Ancho del difuminado */
+    width: 100px; 
     height: 100%;
     z-index: 2;
-    pointer-events: none; /* Permite dar click a través del difuminado */
+    pointer-events: none; 
 }
 
 .logos-marquee::before {
@@ -386,43 +421,36 @@ nav a:hover {
     background: linear-gradient(to left, lightblue, transparent);
 }
 
-/* La pista que se mueve */
 .logos-track {
     display: inline-block;
-    animation: slide 35s linear infinite; /* 35s es la velocidad (mayor = más lento) */
+    animation: slide 35s linear infinite; 
 }
 
-/* ESTILO DE LAS FOTOS */
 .logos-track img {
-    height: 300px;       /* Altura fija (tipo Story de Instagram) */
-    width: 520px;        /* Ancho fijo */
-    object-fit: cover;   /* IMPORTANTE: Recorta la foto para que no se estire */
-    border-radius: 16px; /* Bordes redondeados */
-    margin: 0 15px;      /* Espacio entre cada foto */
-    box-shadow: 0 8px 20px rgba(0,0,0,0.1); /* Sombra suave */
-    transition: transform 0.3s ease; /* Animación al pasar el mouse */
+    height: 300px;      
+    width: 520px;      
+    object-fit: cover;   
+    border-radius: 16px; 
+    margin: 0 15px;      
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1); 
+    transition: transform 0.3s ease; 
 }
 
-/* Efecto al pasar el mouse por encima de una foto */
 .logos-track img:hover {
-    transform: scale(1.05); /* Crece un 5% */
+    transform: scale(1.05); 
     cursor: pointer;
     z-index: 10;
-    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2); /* Sombra morada */
+    box-shadow: 0 15px 30px rgba(99, 102, 241, 0.2); 
 }
-
-/* LA ANIMACIÓN DE MOVIMIENTO */
 @keyframes slide {
     from {
         transform: translateX(0);
     }
     to {
-        /* Se mueve hacia la izquierda la mitad exacta (el tamaño del primer grupo) */
         transform: translateX(-50%); 
     }
 }
 
-/* Ajuste para móviles (fotos un poco más pequeñas) */
 @media (max-width: 768px) {
     .logos-track img {
         height: 200px;
@@ -430,16 +458,6 @@ nav a:hover {
     }
 }
 
-/* Colores de estado */
-.texto-exito {
-    color: #10b981; /* Verde */
-}
-
-.texto-error {
-    color: #ef4444; /* Rojo fuerte */
-}
-
-/* El estilo base del mensaje (igual que antes) */
 .mensaje-oculto {
     display: none;
     font-weight: 600;
@@ -453,56 +471,48 @@ nav a:hover {
     to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== SECCIÓN DEMO (CELULAR INTEGRADO) ===== */
 
-/* Reemplaza tu bloque .demo-section actual por este: */
 .demo-section {
     padding: 100px 20px;
-    background: #ffffff; /* Cambiamos gris por blanco para más luz */
+    background: #ffffff; 
     text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
-    position: relative; /* Necesario para los elementos decorativos */
-    overflow: hidden;   /* Para que los blobs no se salgan de la sección */
+    position: relative; 
+    overflow: hidden;   
 }
 
-/* ===== DECORACIÓN DE FONDO (Hacen que el celular resalte) ===== */
-
-/* Blob 1: Luz principal a la izquierda */
-/* Luz Central Intensa (Morada) */
 .demo-section::before {
     content: '';
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* Centrado perfecto detrás del cel */
-    width: 350px; /* Más concentrado */
+    transform: translate(-50%, -50%); 
+    width: 350px; 
     height: 350px;
-    background: var(--primary); /* Tu color morado principal */
-    filter: blur(80px); /* Difuminado */
-    opacity: 0.4; /* ¡Mucho más visible! (Antes era 0.15) */
+    background: var(--primary); 
+    filter: blur(80px); 
+    opacity: 0.4; 
     z-index: 1;
     border-radius: 50%;
 }
 
-/* Luz Secundaria (Rosa/Azul) para darle dimensión */
 .demo-section::after {
     content: '';
     position: absolute;
-    top: 60%; /* Un poco más abajo */
+    top: 60%; 
     left: 55%;
     transform: translate(-50%, -50%);
     width: 300px;
     height: 300px;
-    background: var(--secondary); /* Tu color rosa */
+    background: var(--secondary); 
     filter: blur(70px);
     opacity: 0.3;
     z-index: 0;
     border-radius: 50%;
 }
 
-/* Aseguramos que el texto y el celular queden ENCIMA de las luces */
 .demo-header, .phone-mockup-static {
     position: relative;
     z-index: 2;
@@ -517,14 +527,12 @@ nav a:hover {
     margin-bottom: 15px;
 }
 
-/* MARCO DEL CELULAR (Estático en la web) */
 .phone-mockup-static {
     width: 300px;
     height: 600px;
     background: #1e293b;
     border-radius: 45px;
-    
-    /* CAMBIO CLAVE 1: Sombra morada brillante en lugar de negra */
+
     box-shadow: 0 20px 60px rgba(99, 102, 241, 0.5); 
     
     padding: 12px;
@@ -532,16 +540,14 @@ nav a:hover {
     border: 4px solid #334155;
     margin: 0 auto;
     max-width: 100%;
-    z-index: 10; /* Asegura que esté encima de las luces */
+    z-index: 10;
 
-    /* CAMBIO CLAVE 2: Animación de flotar */
     animation: flotar 6s ease-in-out infinite;
 }
 
-/* Agrega esta animación al final de tu CSS si no la tienes */
 @keyframes flotar {
     0% { transform: translateY(0px); }
-    50% { transform: translateY(-20px); } /* Sube 20px */
+    50% { transform: translateY(-20px); }
     100% { transform: translateY(0px); }
 }
 .phone-notch {
@@ -566,7 +572,6 @@ nav a:hover {
     position: relative;
 }
 
-/* Animación de imágenes (Igual que antes) */
 .screen-img {
     position: absolute;
     top: 0;

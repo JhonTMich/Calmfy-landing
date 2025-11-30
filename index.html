@@ -36,9 +36,8 @@
         <div class="hero-blob"></div>
 
         <div class="hero-content">
-            <span class="badge">Disponible pronto para estudiantes</span>
-            <h1>Tu Futuro Financiero <br> <span class="highlight">Despega HOY</span></h1>
-            <p>Domina tu dinero, ahorra como un campeón y gestiona tus finanzas sin estrés. La app esencial para tu etapa universitaria.</p>
+            <h1>Tu Billetera Digital <br> <span class="highlight">con Poderes</span></h1>
+            <p>Deja de sufrir para llegar a fin de mes. Comfy te ayuda a organizar tus finanzas automáticamente mientras tú disfrutas la vida.</p>
 
             <div class="hero-buttons">
                 <button class="btn-primary" onclick="window.location.href='#descargar'">¡Empieza Ya!</button>
@@ -199,52 +198,20 @@
         </div>
     </footer>
 <script>
-        /* 1. LÓGICA DEL FORMULARIO */
-        const input = document.getElementById('emailInput');
-        const botonReg = document.getElementById('btnRegistro');
-        const mensaje = document.getElementById('mensajeFeedback');
-        const regexEmail = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-        if(botonReg) {
-            botonReg.addEventListener('click', function() {
-                const correo = input.value.trim();
-                if (correo === "" || !regexEmail.test(correo)) {
-                    mensaje.innerText = "Por favor, ingresa un email válido";
-                    mensaje.className = "mensaje-oculto texto-error";
-                    mensaje.style.display = "block";
-                } else {
-                    botonReg.innerText = "Enviando...";
-                    setTimeout(() => {
-                        input.value = "";
-                        botonReg.innerText = "¡A por ello!";
-                        mensaje.innerText = "¡Gracias! Te contactaremos pronto";
-                        mensaje.className = "mensaje-oculto texto-exito";
-                        mensaje.style.display = "block";
-                        setTimeout(() => { mensaje.style.display = "none"; }, 3000);
-                    }, 1000);
-                }
-            });
-        }
-
-        /* 2. LÓGICA DEL CELULAR (ROTACIÓN AUTOMÁTICA) */
         const images = document.querySelectorAll('.screen-img');
         let currentImageIndex = 0;
 
         function rotateImages() {
-            // Si no hay imágenes, no hacemos nada (evita errores)
             if(images.length === 0) return;
 
-            // Quitamos 'active' de la actual
             images[currentImageIndex].classList.remove('active');
 
-            // Calculamos la siguiente
             currentImageIndex = (currentImageIndex + 1) % images.length;
 
-            // Ponemos 'active' a la nueva
             images[currentImageIndex].classList.add('active');
         }
 
-        // Iniciar rotación cada 3 segundos
         setInterval(rotateImages, 3000);
 
     </script>
