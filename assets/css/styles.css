@@ -321,50 +321,6 @@ nav a:hover {
     font-weight: bold;
 }
 
-/* ===== FAQ ===== */
-.faq {
-    padding: 80px 20px;
-    text-align: center;
-    background: white;
-}
-
-.faq-box {
-    max-width: 700px;
-    margin: 40px auto;
-    text-align: left;
-}
-
-details {
-    margin-bottom: 15px;
-    border-bottom: 1px solid #e2e8f0;
-    padding-bottom: 15px;
-}
-
-summary {
-    cursor: pointer;
-    font-weight: 700;
-    font-size: 1.1rem;
-    list-style: none; /* Quita el triángulo por defecto */
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-summary::after {
-    content: '+';
-    font-size: 20px;
-    color: var(--primary);
-}
-
-details[open] summary::after {
-    content: '-';
-}
-
-details p {
-    margin-top: 10px;
-    color: #64748b;
-}
-
 /* ===== FOOTER ===== */
 .footer {
     padding: 50px 5%;
